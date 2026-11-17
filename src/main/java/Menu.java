@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Menu implements Serializable {
+public abstract class Menu implements Serializable {
     private String kode;
     private String namaMenu;
     private int stok;
@@ -11,19 +11,10 @@ public class Menu implements Serializable {
         this.stok = stok;
     }
 
-    public String getKode() {
-        return kode;
-    }
+    public String getKode() { return kode; }
+    public String getNamaMenu() { return namaMenu; }
+    public int getStok() { return stok; }
+    public void kurangiStok(int jumlah) { this.stok -= jumlah; }
 
-    public String getNamaMenu() {
-        return namaMenu;
-    }
-
-    public int getStok() {
-        return stok;
-    }
-
-    public void kurangiStok(int jumlah) {
-        this.stok -= jumlah;
-    }
+    public abstract String getKategori(); // Method polimorfik
 }
